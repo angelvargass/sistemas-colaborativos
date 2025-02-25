@@ -1,11 +1,7 @@
-# MERN Practice Project
-
-## Index
-- [Video Reference](https://youtu.be/O3BUHwfHf84?si=xXgrEQRNoWAOISHn)
-- [MongoDB Documentation](https://www.mongodb.com/docs/atlas/)
+# Sistemas colaborativos
 
 ## Project Description
-This project is a **MERN** (MongoDB, Express, React, Node.js) stack application built from scratch by following a practice tutorial. The main goal is to learn and reinforce CRUD operations with MongoDB and Express, as well as basic front-end functionality with React. The code is hand-written while following the referenced video to understand each step of the MERN architecture.
+This project is a **MERN** (MongoDB, Express, React, Node.js) stack application built from scratch.
 
 Currently, the project demonstrates:
 - A simple **Express** server to handle API requests.
@@ -29,7 +25,7 @@ The repository is divided into multiple folders for organizational clarity:
   - `models`: Contains Mongoose models representing database entities.
   - `routes` (or `controllers`): Defines the Express routes/endpoints for CRUD operations.
   - `config`: May contain database connection settings or environment configuration.
-  - `server.js` (or `index.js`): Entry point for the Node.js server.
+  - `index.js`: Entry point for the Node.js server.
 
 - `client` (or `frontend`):
   - `src`:
@@ -58,7 +54,7 @@ Depending on the tutorial or practice goals, these features may be adapted to sp
 ### 3. `server.js`
 - Sets up the Node.js server using **Express**.
 - Connects to MongoDB using **Mongoose**.
-- Listens on a specified port (e.g., `localhost:5000`).
+- Listens on a specified port (e.g., `localhost:3000`).
 
 ### 4. `client/src/App.js`
 - Main React component that sets up **React Router** (if applicable).
@@ -73,7 +69,7 @@ You can test the API endpoints with **Postman** or **Thunder Client**, or by mak
 
 1. **Create a Record**  
    - **Method**: `POST`  
-   - **URL**: `http://localhost:5000/users` (example)  
+   - **URL**: `http://localhost:3000/users` (example)  
    - **Body (JSON)**:
      ```json
      {
@@ -86,12 +82,12 @@ You can test the API endpoints with **Postman** or **Thunder Client**, or by mak
 
 2. **Read All Records**  
    - **Method**: `GET`  
-   - **URL**: `http://localhost:5000/users`  
+   - **URL**: `http://localhost:3000/users`  
    - **Response**: Returns an array of user objects.
 
 3. **Update a Record**  
    - **Method**: `PUT`  
-   - **URL**: `http://localhost:5000/users/123` (where `123` is a user ID)  
+   - **URL**: `http://localhost:3000/users/123` (where `123` is a user ID)  
    - **Body (JSON)**:
      ```json
      {
@@ -102,7 +98,7 @@ You can test the API endpoints with **Postman** or **Thunder Client**, or by mak
 
 4. **Delete a Record**  
    - **Method**: `DELETE`  
-   - **URL**: `http://localhost:5000/users/123`  
+   - **URL**: `http://localhost:3000/users/123`  
    - **Response**: Returns a confirmation message or the deleted user object.
 
 ## Prerequisites
@@ -134,7 +130,7 @@ You can test the API endpoints with **Postman** or **Thunder Client**, or by mak
    cd server
    npm start
    ```
-   By default, the server might run at `http://localhost:5000` (depending on your setup).
+   By default, the server might run at `http://localhost:3000` (depending on your setup).
 5. **Run the Client**:
    ```bash
    cd client
