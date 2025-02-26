@@ -1,4 +1,4 @@
-# Sistemas colaborativos
+# SC Class
 
 ## Project Description
 This project is a **MERN** (MongoDB, Express, React, Node.js) stack application built from scratch.
@@ -56,11 +56,11 @@ Depending on the tutorial or practice goals, these features may be adapted to sp
 - Connects to MongoDB using **Mongoose**.
 - Listens on a specified port (e.g., `localhost:3000`).
 
-### 4. `client/src/App.js`
+### 4. `frontend/src/App.js`
 - Main React component that sets up **React Router** (if applicable).
 - Renders different pages or components based on the URL path.
 
-### 5. `client/src/components/UserForm.jsx`
+### 5. `frontend/src/components/UserForm.jsx`
 - React component for creating or updating user data.
 - Includes form fields and submission logic that calls the Express API.
 
@@ -112,32 +112,28 @@ You can test the API endpoints with **Postman** or **Thunder Client**, or by mak
    git clone <repository-url>
    ```
 2. **Install Dependencies**:
-   - Server:
+   - Backend:
      ```bash
-     cd server
+     cd backend
      npm install
      ```
-   - Client:
+   - Frontend:
      ```bash
-     cd client
+     cd frontend
      npm install
      ```
 3. **Configure the Database**:
-   - In `server/config` or `.env` file, add your MongoDB connection string.  
+   - In `backend/config` or `.env` file, add your MongoDB connection string.  
    - For detailed instructions, see the [MongoDB Documentation](https://www.mongodb.com/docs/atlas/).
-4. **Run the Server**:
+4. **Run the Backend**:
    ```bash
-   cd server
-   npm start
+   cd backend
+   npm run dev
    ```
    By default, the server might run at `http://localhost:3000` (depending on your setup).
-5. **Run the Client**:
+5. **Run the Frontend**:
    ```bash
-   cd client
-   npm start
+   cd frontend
+   npm run dev
    ```
    The React app typically runs at `http://localhost:3000`.
-
-## Reference Video
-This code was created while following the tutorial available at:  
-[React Node.js MERN Stack Tutorial](https://youtu.be/O3BUHwfHf84?si=xXgrEQRNoWAOISHn)
