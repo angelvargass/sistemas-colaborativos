@@ -5,6 +5,7 @@ import cors from 'cors'; // Import CORS
 import { connectDB } from './config/db.js';
 import productRoutes from './routes/product.route.js';
 import userRoutes from './routes/user.route.js';
+import flightRoutes from './routes/flight.route.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/flights", flightRoutes);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));

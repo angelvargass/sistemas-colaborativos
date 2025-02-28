@@ -1,0 +1,50 @@
+[
+    {
+        "airline": "Delta",
+        "price": 421,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "9h 00m",
+        "route": "SJO -> ATL -> AUS"
+    },
+    {
+        "airline": "United",
+        "price": 517,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "9h 23m",
+        "route": "SJO -> DEN -> AUS"
+    },
+    {
+        "airline": "United",
+        "price": 522,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "7h 09m",
+        "route": "SJO -> IAH -> AUS"
+    },
+    {
+        "airline": "American",
+        "price": 537,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "9h 47m",
+        "route": "SJO -> DFW -> AUS"
+    },
+    {
+        "airline": "Southwest",
+        "price": 808,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "7h 25m",
+        "route": "SJO -> HOU -> AUS"
+    },
+    {
+        "airline": "Copa Airlines",
+        "price": 897,
+        "departure": "SJO",
+        "arrival": "AUS",
+        "duration": "7h 15m",
+        "route": "SJO -> PTY -> AUS"
+    }
+]
