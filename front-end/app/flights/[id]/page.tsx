@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap";
+import { useParams, useRouter } from "next/navigation";
+import { Container, Row, Col, Card, Spinner, Alert, Button } from "react-bootstrap";
 
 export default function FlightDetails() {
   const { id } = useParams();
+  const router = useRouter();
   const [flight, setFlight] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -22,7 +23,7 @@ export default function FlightDetails() {
 
         if (!selectedFlight) throw new Error("Flight not found.");
 
-        setFlight(selectedFlight);
+        setFlight({ ...selectedFlight, flightId: id }); // Add flightId to state
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -33,6 +34,11 @@ export default function FlightDetails() {
     fetchFlight();
   }, [id]);
 
+  // Navigate to checkout page with flight details
+  const handleBuyNow = () => {
+    router.push(`/checkout?flightId=${flight.flightId}&airline=${flight.airline}&price=${flight.price}&departure=${flight.departure}&arrival=${flight.arrival}&duration=${flight.duration}&route=${flight.route}`);
+  };
+
   return (
     <Container className="mt-5">
       {loading && <Spinner animation="border" className="d-block mx-auto" />}
@@ -40,7 +46,6 @@ export default function FlightDetails() {
 
       {flight && (
         <Row className="align-items-center">
-          {/* Flight Details on Left */}
           <Col md={6}>
             <Card className="shadow p-4">
               <Card.Body>
@@ -50,6 +55,9 @@ export default function FlightDetails() {
                 <p><strong>Arrival:</strong> {flight.arrival}</p>
                 <p><strong>Duration:</strong> {flight.duration}</p>
                 <p><strong>Route:</strong> {flight.route}</p>
+                <Button variant="success" className="mt-3" onClick={handleBuyNow}>
+                  Buy Now
+                </Button>
               </Card.Body>
             </Card>
           </Col>
