@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema(
   {
@@ -9,10 +9,10 @@ const orderSchema = new mongoose.Schema(
     arrival: { type: String, required: true },
     duration: { type: String, required: true },
     route: { type: String, required: true },
-    status: { type: String, default: "Pending" }, // Status of the booking
+    status: { type: String, default: 'Pending' } // Status of the booking
   },
   { timestamps: true } // Adds createdAt and updatedAt fields
-);
+)
 
-const Order = mongoose.model("Order", orderSchema);
-export default Order;
+const Order = mongoose.model('Order', orderSchema)
+export default Order

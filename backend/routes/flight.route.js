@@ -1,10 +1,10 @@
-import express from 'express';
-import { getFlights } from '../controllers/flights.controller.js';
+import express from 'express'
+import { getFlights } from '../controllers/flights.controller.js'
 
-const router = express.Router();
+const router = express.Router()
 
 // Route: /api/flights
 
-router.get("/", getFlights);
+router.get('/', getFlights)
 
-export default router;
+export default router

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.2",
+    "front-end": "file:",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
