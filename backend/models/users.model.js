@@ -1,6 +1,5 @@
-
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import mongoose from 'mongoose'
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.Schema(
   {
@@ -11,43 +10,41 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true, // para evitar usuarios duplicados.
+      unique: true
     },
     password: {
       type: String,
-      required: false,
+      required: false
     },
     phone: {
       type: String,
-      required: false,
+      required: false
     },
-    // Manejo de roles y bloqueo
     role: {
       type: String,
-      default: "user", // Puede ser "admin", "user", etc.
+      default: 'user'
     },
     isBlocked: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   {
-    timestamps: true, // Crea automáticamente los campos createdAt y updatedAt.
+    timestamps: true // createdAt, updatedAt
   }
-);
+)
 
-// Hook para hashear la contraseña antes de guardar
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next()
   try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
+    const salt = await bcrypt.genSalt(process.env.SALT || 10)
+    this.password = await bcrypt.hash(this.password, salt)
+    next()
   } catch (error) {
-    next(error);
+    next(error)
   }
-});
+})
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema)
 
-export default User;
+export default User
