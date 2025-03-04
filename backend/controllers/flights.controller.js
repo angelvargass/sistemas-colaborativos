@@ -1,4 +1,4 @@
-import flightsData from '../available_flights.json'
+import flightsData from '../available_flights.json' assert { type: "json" };
 
 export const getFlights = async (req, res) => {
   try {
