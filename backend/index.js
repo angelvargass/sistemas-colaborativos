@@ -7,6 +7,7 @@ import productRoutes from './routes/product.route.js'
 import userRoutes from './routes/user.route.js'
 import flightRoutes from './routes/flight.route.js'
 import orderRoutes from './routes/order.route.js'
+import reportRoutes from "./routes/reports.routes.js";
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/flights', flightRoutes)
 app.use('/api/orders', orderRoutes)
+app.use("/api/reports", reportRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/dist')))

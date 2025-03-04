@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.2",
+    "chart.js": "^4.4.8",
     "front-end": "file:",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
