@@ -1,22 +1,22 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const productSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    price: {
-        type: Number,
-        required: true
-    },
-    image: {
-        type: String,
-        required: true
-    }
+  name: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  }
 }, {
-    timestamps: true // createdAt, updatedAt
-});
+  timestamps: true // createdAt, updatedAt
+})
 
-const Product = mongoose.model('Product', productSchema); // Singular & Capitalized; Reflects as Products
+const Product = mongoose.model('Product', productSchema) // Singular & Capitalized; Reflects as Products
 
-export default Product;
+export default Product

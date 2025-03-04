@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Table, Spinner, Alert, Pagination } from "react-bootstrap";
-import Link from "next/link";
+import { Table, Spinner, Alert, Pagination, Button } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 
 export default function FlightsTable() {
   const [flights, setFlights] = useState([]);
@@ -10,6 +10,7 @@ export default function FlightsTable() {
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const flightsPerPage = 10;
+  const router = useRouter(); // ✅ Used for navigation
 
   useEffect(() => {
     const fetchFlights = async () => {
@@ -42,9 +43,9 @@ export default function FlightsTable() {
     <div className="container mt-5">
       <h2 className="text-center mb-4">Available Flights</h2>
 
+      {/* Display Flights */}
       {loading && <Spinner animation="border" className="d-block mx-auto" />}
       {error && <Alert variant="danger">{error}</Alert>}
-
       {!loading && !error && (
         <>
           <Table striped bordered hover responsive>
@@ -57,7 +58,7 @@ export default function FlightsTable() {
                 <th>Arrival</th>
                 <th>Duration</th>
                 <th>Route</th>
-                <th>Details</th>
+                <th>Action</th> {/* ✅ New Column for Details Button */}
               </tr>
             </thead>
             <tbody>
@@ -71,9 +72,13 @@ export default function FlightsTable() {
                   <td>{flight.duration}</td>
                   <td>{flight.route}</td>
                   <td>
-                    <Link href={`/flights/${indexOfFirstFlight + index}`}>
-                      <button className="btn btn-primary btn-sm">View</button>
-                    </Link>
+                    <Button 
+                      variant="primary" 
+                      size="sm" 
+                      onClick={() => router.push(`/flights/${flight.id}`)} // ✅ Navigate to details page
+                    >
+                      Details
+                    </Button>
                   </td>
                 </tr>
               ))}
